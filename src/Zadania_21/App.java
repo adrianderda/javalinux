@@ -40,13 +40,11 @@ public class App {
         //Zadanie 4
         int a;
         int sum1 = 0;
-        int stop =0;
-                do {
+        do {
             System.out.println("Podaj swoja liczbe");
             a = sc.nextInt();
-            sum1+=a;
-            stop=a;
-        }while(stop!=0);
+            sum1 += a;
+        } while (a != 0);
         System.out.println("Suma wprowadzonych liczb to: " + sum1);
 
         //Zadanie 4*
