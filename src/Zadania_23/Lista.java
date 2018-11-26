@@ -2,13 +2,11 @@ package Zadania_23;
 
 public class Lista {
 
-    int first;
     int[] table = new int[10];
     int last;
 
     public void addElement(int element) {
-        table[first] = element;
-        first++;
+        table[last] = element;
         last++;
     }
 
@@ -21,12 +19,12 @@ public class Lista {
     public void deleteFromList(int index) {
         for (int i = 0; i < last; i++) {
             if (i == index) {
-                for (int j = i; j < last - 1; j++) {
+                for (int j = i; j < last ; j++) {
                     table[j] = table[j + 1];
-                    last--;
                 }
             }
         }
+        last--;
     }
 
     public void search(int value) {
@@ -42,8 +40,8 @@ public class Lista {
             for (int j = i + 1; j < last; j++) {
                 if (table[i] == table[j]) {
                     table[j] = table[last - 1];
-                    last--;
                     j--;
+                    last--;
                 }
             }
         }

@@ -30,14 +30,13 @@ public class Mejn {
         lista.addElement(10);
         lista.addElement(20);
         lista.addElement(30);
-        lista.addElement(10);
         lista.addElement(50);
         lista.addElement(50);
         lista.addElement(6);
-        lista.deleteFromList(2);
         lista.listStatus();
         System.out.println("--------------------------");
         lista.search(50);
+        lista.removeDuplicates();
         lista.removeDuplicates();
         lista.listStatus();
     }
