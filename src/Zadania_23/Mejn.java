@@ -1,5 +1,7 @@
 package Zadania_23;
 
+import java.util.Arrays;
+
 public class Mejn {
     public static void main(String[] args) {
 
@@ -9,10 +11,10 @@ public class Mejn {
         dog1.age = 14;
         dog1.name = "Lucky";
         dog1.color = Color.GINGER;
-        System.out.println(dog1.breed +", "+dog1.age+", "+dog1.name+", "+dog1.color);
+        System.out.println(dog1.breed + ", " + dog1.age + ", " + dog1.name + ", " + dog1.color);
 
         //Zadanie 2
-        Dog dog2 = new Dog("Golden Retriver",6,"Puszek",Color.GOLDEN);
+        Dog dog2 = new Dog("Golden Retriever", 6, "Puszek", Color.GOLDEN);
 
         //Zadanie 3
         dog2.allAbout();
@@ -20,24 +22,21 @@ public class Mejn {
         dog2.setAge(-1);
 
         //Zadanie 4
-        Dog[] table ={dog1,dog2};
-        for(Dog dogs : table){
+        Dog[] table = {dog1, dog2};
+        for (Dog dogs : table) {
             dogs.allAbout();
         }
 
         //Zadanie 6
         Lista lista = new Lista();
-        lista.addElement(10);
-        lista.addElement(20);
-        lista.addElement(30);
-        lista.addElement(50);
-        lista.addElement(50);
-        lista.addElement(6);
-        lista.listStatus();
-        System.out.println("--------------------------");
-        lista.search(50);
-        lista.removeDuplicates();
+        lista.addElement(1);
+        lista.addElement(2);
+        lista.addElement(2);
+        lista.addElement(3);
+        lista.addElement(2);
         lista.removeDuplicates();
         lista.listStatus();
+
+
     }
 }
