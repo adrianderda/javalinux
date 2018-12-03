@@ -8,14 +8,19 @@ public class App {
     public static void main(String[] args) {
 
 
-        SchoolStudent student = new SchoolStudent();
+        Student student = new ClassStudent();
         student.setName("asf");
 
         Animal human = new Human("Czowiek");
         Animal fish = new Goldfish("Zlota Rybka");
 
+        human.setName("Patryk");
+
+
         System.out.println(human);
         System.out.println(fish);
+
+
 
     }
 }
