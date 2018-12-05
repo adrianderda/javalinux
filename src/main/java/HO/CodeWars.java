@@ -9,12 +9,12 @@ import java.util.List;
 
 public class CodeWars {
 
-    public boolean isValid(String braces) {
+    public static boolean isValid(String braces) {
         return braces.equals(new StringBuilder(braces).reverse().toString());
     }
 
 
-    public String spinWords(String sentence) {
+    public static String spinWords(String sentence) {
 
         List<String> tempList = new ArrayList<>(Arrays.asList(sentence.split(" ")));
         List<String> newList = new ArrayList<>();
@@ -35,7 +35,7 @@ public class CodeWars {
         return Integer.bitCount(n);
     }
 
-    public int solution(int number) {
+    public static int solution(int number) {
         int temp = 0;
         for (int i = 0; i < number; i++) {
             if ((i % 3) == 0 || (i % 5) == 0) {
@@ -89,7 +89,7 @@ public class CodeWars {
         }
     }
 
-    public int getSum(int a, int b) {
+    public static int getSum(int a, int b) {
         int abs = 0;
         if (a > b) {
             for (int i = b; i <= a; i++) {
