@@ -22,7 +22,7 @@ public class Calculator implements Calculate {
                 temp=x/y;
             }
         } catch (DivideByZeroExeption e) {
-            System.out.println("Dziku nie dziel przez 0!!!");
+            System.out.println("Nie dziel przez 0!!!");
         }
         return temp;
     }
