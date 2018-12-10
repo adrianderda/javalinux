@@ -13,18 +13,11 @@ public class Calculator implements Calculate {
     }
 
     @Override
-    public double divide(double x, double y) {
-        double temp = -1;
-        try {
-            if(x==0 || y==0){
-                throw new DivideByZeroExeption();
-            }else{
-                temp=x/y;
-            }
-        } catch (DivideByZeroExeption e) {
-            System.out.println("Nie dziel przez 0!!!");
+    public double divide(double x, double y) throws DivideByZeroExeption {
+        if(y==0){
+            throw new DivideByZeroExeption("Nie dziel przez 0!");
         }
-        return temp;
+        return x/y;
     }
 
     @Override
