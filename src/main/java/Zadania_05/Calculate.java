@@ -5,7 +5,7 @@ public interface Calculate {
 
     double substract(double x, double y);
 
-    double divide(double x, double y);
+    double divide(double x, double y) throws DivideByZeroExeption;
 
     double multiply(double x, double y);
 }

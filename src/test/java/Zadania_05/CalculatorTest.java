@@ -1,17 +1,21 @@
 package Zadania_05;
 
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 
 import static junit.framework.TestCase.assertEquals;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
-import static org.junit.Assert.fail;
 
 
 public class CalculatorTest {
 
     private Calculator calculator;
+
+    @Rule
+    public ExpectedException thrown = ExpectedException.none();
 
 
     @Before
@@ -35,7 +39,7 @@ public class CalculatorTest {
     }
 
     @Test
-    public void divide() {
+    public void divide() throws DivideByZeroExeption {
         double result = calculator.divide(15, 5);
         assertEquals(3d, result);
     }
@@ -47,7 +51,7 @@ public class CalculatorTest {
 
     }
 
-    @Test()
+    @Test
     public void exceptionTest(){
         try {
             calculator.divide(10,0);
@@ -56,7 +60,6 @@ public class CalculatorTest {
                     .isInstanceOf(DivideByZeroExeption.class);
         }
     }
-
 }
 
 
