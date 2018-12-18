@@ -1,60 +1,58 @@
 package Zadania_05;
 
-import org.junit.Before;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.ExpectedException;
+import org.testng.AssertJUnit;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
 
 
-import static junit.framework.TestCase.assertEquals;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 
 public class CalculatorTest {
 
-    private Calculator calculator;
-
-    @Rule
-    public ExpectedException thrown = ExpectedException.none();
+    private Calculator calculator = new Calculator();
 
 
-    @Before
+    @BeforeMethod
     public void setUp() {
         calculator = new Calculator();
     }
 
-
-    @Test
-    public void addCorrect() {
-        double result = calculator.add(15, 5);
-        assertEquals(20d, result);
-
-    }
-
-
-    @Test
-    public void substract() {
-        double result = calculator.substract(15, 5);
-        assertEquals(10d, result);
-    }
-
-    @Test
-    public void divide() throws DivideByZeroExeption {
-        double result = calculator.divide(15, 5);
-        assertEquals(3d, result);
-    }
-
-    @Test
-    public void multiply() {
-        double result = calculator.multiply(15, 5);
-        assertEquals(75d, result);
+    @Parameters({"addx", "addy"})
+    @Test(groups = "calculate")
+    public void addCorrect(double x, double y) {
+        double result = calculator.add(x, y);
+        AssertJUnit.assertEquals(12d, result);
 
     }
 
-    @Test
-    public void exceptionTest(){
+    @Parameters({"subx", "suby"})
+    @Test(groups = "calculate")
+    public void substractCorrect(double x, double y) {
+        double result = calculator.substract(x, y);
+        AssertJUnit.assertEquals(8d, result);
+    }
+
+    @Parameters({"divx", "divy"})
+    @Test(groups = "calculate")
+    public void divideCorrect(double x, double y) throws DivideByZeroExeption {
+        double result = calculator.divide(x, y);
+        AssertJUnit.assertEquals(5d, result);
+    }
+
+    @Parameters({"multix", "multiy"})
+    @Test(groups = "calculate")
+    public void multiplyCorrect(double x, double y) {
+        double result = calculator.multiply(x, y);
+        AssertJUnit.assertEquals(20d, result);
+
+    }
+
+    @Test(groups = "calculate")
+    public void exceptionTest() {
         try {
-            calculator.divide(10,0);
+            calculator.divide(10, 0);
         } catch (Exception e) {
             assertThat(e)
                     .isInstanceOf(DivideByZeroExeption.class);

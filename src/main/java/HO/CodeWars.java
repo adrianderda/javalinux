@@ -2,9 +2,8 @@ package HO;
 
 
 import java.time.LocalTime;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 
 public class CodeWars {
@@ -151,12 +150,33 @@ public class CodeWars {
         return list.get(0);
     }
 
+    public static String longestConsec(String[] strarr, int k) {
+
+        Set<String> list1 = new HashSet<>(Arrays.asList(strarr));
+        Set<String> list = new HashSet<>(list1);
+        String var = "";
+        String x = "";
+        int index = 0;
+        while (k > index) {
+            for (String temp : list) {
+                if (temp.length() > var.length()) {
+                    var=temp;
+                }
+            }
+            x=x.concat(var);
+            list.remove(var);
+            var="";
+            index++;
+        }
+        return x;
+    }
+
 
     public static void main(String[] args) {
 
         CodeWars codeWars = new CodeWars();
 
 
-        System.out.println(whoIsNext(new String[]{"Sheldon", "Leonard", "Penny", "Rajesh", "Howard"}, 6));
+        System.out.println(longestConsec(new String[]{"wlwsasphmxx","owiaxujylentrklctozmymu","wpgozvxxiu"}, 2));
     }
 }
